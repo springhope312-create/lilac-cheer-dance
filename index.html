@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lilac CHEER DANCE | 小岩キッズチアダンス</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* ====== 基本設定 ====== */
+    :root {
+      --purple: #a855f7;
+      --purple-dark: #7c3aed;
+      --pink: #f472b6;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --bg-soft: #faf5ff;
+      --radius: 16px;
+      --shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    /* ====== ヘッダー ====== */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 10px 20px;
+      z-index: 50;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    nav button:hover {
+      background: rgba(0,0,0,0.05);
+      color: var(--text);
+    }
+
+    .nav-cta {
+      background: var(--purple);
+      color: #fff;
+    }
+
+    /* ====== セクション共通 ====== */
+    section {
+      padding: 70px 20px;
+    }
+
+    .inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      color: var(--muted);
+      margin-bottom: 30px;
+      line-height: 1.7;
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      margin-right: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-ghost {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.2);
+      color: var(--purple-dark);
+    }
+
+    /* ====== クラス紹介 ====== */
+    .class-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .class-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .class-card img {
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+    }
+
+    .class-card-accent {
+      background: linear-gradient(135deg, #fff7ff, #fdf2ff);
+      border-color: var(--pink);
+    }
+
+    /* ====== アクセス ====== */
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .access-box {
+      border: 1px dashed var(--muted);
+      padding: 20px;
+      border-radius: var(--radius);
+      text-align: center;
+      color: var(--muted);
+      background: #fff;
+    }
+
+    /* ====== フッター ====== */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--muted);
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    /* ====== スマホ最適化（幅600px以下） ====== */
+    @media (max-width: 600px) {
+
+      section {
+        padding: 50px 16px;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero img {
+        width: 85% !important;
+        max-width: 320px !important;
+        margin-bottom: 20px;
+      }
+
+      .hero-title {
+        font-size: 1.8rem;
+      }
+
+      .lead {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .class-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .access-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      iframe {
+        width: 100% !important;
+        height: 300px !important;
+      }
+
+      nav button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+
+  <script>
+    function scrollToId(id) {
+      const el = document.getElementById(id);
+      const y = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- ====== HEADER ====== -->
+  <header>
+    <div class="header-inner">
+      <div class="logo-area">
+        <div>
+          <strong>Lilac CHEER DANCE</strong><br>
+          <small>東京・小岩のキッズチアダンス</small>
+        </div>
+      </div>
+
+      <nav>
+        <button onclick="scrollToId('top')">トップ</button>
+        <button onclick="scrollToId('classes')">クラス紹介</button>
+        <button onclick="scrollToId('access')">アクセス</button>
+        <button class="nav-cta" onclick="scrollToId('contact')">お問い合わせ</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section id="top">
+    <div class="inner hero">
+
+      <img src="logo-lilac.png" alt="Lilac ロゴ" style="width: 70%; max-width: 420px; margin: 0 auto 30px; filter: drop-shadow(0 6px 10px rgba(0,0,0,0.15));">
+
+      <div>
+        <h1 class="hero-title">みんなの笑顔が輝くチアダンスチーム♪</h1>
+        <p class="lead">
+          はじめましてのダンスでも大丈夫！<br>
+          「Lilac」はみんなで仲良く！元気に！一生懸命レッスンを毎週頑張っています！<br>
+          随時メンバー募集しているので、無料体験をご希望の方はお気軽にお問合せください♪
+        </p>
+        <button class="btn btn-primary" onclick="scrollToId('contact')">無料体験に申し込む</button>
+        <button class="btn btn-ghost" onclick="scrollToId('classes')">クラスを見る</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== CLASSES ====== -->
+  <section id="classes">
+    <div class="inner">
+      <h2>クラス紹介</h2>
+      <p class="lead">年齢に合わせて2つのクラスをご用意しています。</p>
+
+      <div class="class-grid">
+
+        <!-- キッズクラス -->
+        <div class="class-card">
+          <img src="photo-stage-1.jpg" alt="キッズクラス">
+          <h3>キッズクラス</h3>
+          <p>対象：4歳〜小学2年生</p>
+          <p>毎週水曜日 16:20〜17:20</p>
+          <p><strong>料金：月額 6,000円</strong></p>
+          <p>はじめてのダンスにぴったり。楽しく体を動かしながらチアの基礎を学びます。</p>
+        </div>
+
+        <!-- ジュニアクラス -->
+        <div class="class-card class-card-accent">
+          <img src="photo-stage-2.jpg" alt="ジュニアクラス">
+          <h3>ジュニアクラス</h3>
+          <p>対象：小学3年生〜中学生</p>
+          <p>毎週水曜日 17:30〜18:30</p>
+          <p><strong>料金：月額 6,000円</strong></p>
+          <p>フォーメーションや表現力も身につけ、イベント出演も目指します。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ACCESS ====== -->
+  <section id="access">
+    <div class="inner">
+      <h2>アクセス</h2>
+      <p class="lead">東京・小岩エリアのスタジオでレッスンを行っています。</p>
+
+      <div class="access-grid">
+
+        <!-- 西小岩 -->
+        <div class="access-box">
+          <h3>西小岩コミュニティ会館</h3>
+          <p>〒133-0057<br>東京都江戸川区西小岩４丁目３−２２</p>
+
+          <div style="width:100%; overflow:hidden;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.551450852294!2d139.87757927583843!3d35.737248472569206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601885dc0b1b3b41%3A0xbfdf9991420b6e85!2z5rGf5oi45bed5Yy6IOilv-Wwj-WyqeOCs-ODn-ODpeODi-ODhuOCo-S8mumkqA!5e0!3m2!1sja!2sjp!4v1781869332166!5m2!1sja!2sjp"
+              width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- 南小岩 -->
+        <div class="access-box">
+          <h3>南小岩コミュニティ会館</h3>
+          <p>〒133-0056<br>東京都江戸川区南小岩７丁目１７−１０</p>
+
+          <div style="width:100%; overflow:hidden;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.8248455373578!2d139.87935507583825!3d35.73052597257139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601886765b6276ad%3A0x22f0156c072362e7!2z5Y2X5bCP5bKp44Kz44Of44Ol44OL44OG44Kj5Lya6aSo!5e0!3m2!1sja!2sjp!4v1781869415216!5m2!1sja!2sjp"
+              width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== CONTACT ====== -->
+  <section id="contact">
+    <div class="inner">
+      <h2>お問い合わせ・無料体験</h2>
+      <p class="lead">お気軽にお問い合わせください。</p>
+
+      <div style="width:100%; max-width:100%; overflow:hidden;">
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLScAuTXg1XXfXJrUNRoZBSF8W1zVzKAcMMhR5ly_NE1QD2GGDg/viewform?embedded=true"
+          width="100%" 
+          height="1400" 
+          frameborder="0" 
+          marginheight="0" 
+          marginwidth="0"
+          style="border:0; border-radius: 12px;">
+          読み込んでいます…
+        </iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer>
+    © 2026 Lilac CHEER DANCE / Tokyo Koiwa.
+  </footer>
+
+</body>
+</html>
