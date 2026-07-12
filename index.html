@@ -6,20 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --lilac-pink: #f8b4e0;
-      --lilac-purple: #b46cf0;
-      --lilac-dark: #7c3aed;
-      --text-light: #fff;
-      --bg-dark: #000;
+      /* Lilacカラー（ロゴに合わせて調整） */
+      --purple: #c084fc;
+      --purple-dark: #9333ea;
+      --pink: #f472b6;
+
+      /* クラス色（背景） */
+      --stepup-blue: #b3e0ff;
+      --advance-yellow: #fffde0;
+
+      /* クラス色（縁取り） */
+      --stepup-border-yellow: #f7e27d;
+      --advance-border-blue: #8cc9ff;
+
+      /* テキスト・背景（Lilacロゴに合わせて黒ベース） */
+      --text: #ffffff;
+      --muted: #bbbbbb;
+      --bg-soft: #0a0a0a;
+
       --radius: 16px;
-      --shadow: 0 10px 25px rgba(255, 192, 255, 0.2);
+      --shadow: 0 10px 25px rgba(255, 192, 255, 0.15);
     }
 
     body {
       margin: 0;
       font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-light);
+      background: var(--bg-soft);
+      color: var(--text);
     }
 
     header {
@@ -27,7 +40,7 @@
       top: 0;
       background: rgba(0,0,0,0.7);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
       padding: 10px 20px;
       z-index: 50;
     }
@@ -38,7 +51,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: var(--lilac-pink);
+      color: var(--pink);
     }
 
     nav button {
@@ -47,19 +60,17 @@
       padding: 8px 14px;
       border-radius: 999px;
       cursor: pointer;
-      color: var(--lilac-pink);
-      font-weight: 600;
+      color: var(--pink);
     }
 
     nav button:hover {
       background: rgba(255,255,255,0.1);
-      color: var(--lilac-purple);
+      color: var(--purple);
     }
 
     .nav-cta {
-      background: linear-gradient(135deg, var(--lilac-purple), var(--lilac-pink));
+      background: linear-gradient(135deg, var(--purple), var(--pink));
       color: #fff;
-      box-shadow: var(--shadow);
     }
 
     section {
@@ -74,11 +85,11 @@
     h2 {
       font-size: 1.8rem;
       margin-bottom: 10px;
-      color: var(--lilac-pink);
+      color: var(--pink);
     }
 
     .lead {
-      color: #ccc;
+      color: var(--muted);
       margin-bottom: 30px;
     }
 
@@ -91,25 +102,25 @@
     .hero-title {
       font-size: 2.4rem;
       margin-bottom: 16px;
-      color: var(--lilac-pink);
+      color: var(--pink);
     }
 
     .hero-team {
-      font-size: 3rem;
+      font-size: 2.4rem;
       font-weight: 900;
-      color: var(--lilac-purple);
-      text-shadow:
-        -2px -2px 0 var(--lilac-pink),
-         2px -2px 0 var(--lilac-pink),
-        -2px  2px 0 var(--lilac-pink),
-         2px  2px 0 var(--lilac-pink);
+      color: var(--purple);
       margin-bottom: 10px;
+      text-shadow:
+        -2px -2px 0 var(--pink),
+         2px -2px 0 var(--pink),
+        -2px  2px 0 var(--pink),
+         2px  2px 0 var(--pink);
     }
 
     .hero-team-small {
       font-size: 1.2rem;
       font-weight: 600;
-      color: var(--lilac-pink);
+      color: var(--pink);
       margin-bottom: 25px;
     }
 
@@ -123,15 +134,15 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--lilac-purple), var(--lilac-pink));
+      background: linear-gradient(135deg, var(--purple), var(--pink));
       color: #fff;
       box-shadow: var(--shadow);
     }
 
     .btn-ghost {
-      background: transparent;
-      border: 1px solid var(--lilac-pink);
-      color: var(--lilac-pink);
+      background: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--purple-dark);
     }
 
     /* ===== クラス紹介 ===== */
@@ -150,8 +161,8 @@
       box-shadow: var(--shadow);
       box-sizing: border-box;
       padding: 20px;
-      background: rgba(255,255,255,0.05);
-      border: 2px solid var(--lilac-purple);
+      background: #fff;
+      color: #000;
     }
 
     .class-card img {
@@ -162,11 +173,28 @@
       margin-bottom: 10px;
     }
 
+    /* ===== アクセス ===== */
+    .access-grid {
+      display: flex;
+      justify-content: center;
+    }
+
+    .access-box {
+      border: 1px dashed var(--muted);
+      padding: 20px;
+      border-radius: var(--radius);
+      background: #fff;
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      color: #000;
+    }
+
     footer {
       text-align: center;
       padding: 30px 20px;
-      color: #aaa;
-      border-top: 1px solid rgba(255,255,255,0.2);
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.15);
     }
 
     @media (max-width: 600px) {
@@ -197,7 +225,7 @@
       <nav>
         <button onclick="scrollToId('top')">トップ</button>
         <button onclick="scrollToId('classes')">クラス紹介</button>
-        <button onclick="scrollToId('contact')">お問い合わせ</button>
+        <button class="nav-cta" onclick="scrollToId('contact')">お問い合わせ</button>
       </nav>
     </div>
   </header>
@@ -207,10 +235,10 @@
       <img src="Lilac_logo.jpg" alt="Lilac ロゴ" style="width:70%;max-width:420px;margin:0 auto 30px;">
       <h1 class="hero-title">小岩で楽しくチアダンス♪</h1>
       <div class="hero-team">Lilac</div>
-      <div class="hero-team-small">CHEER DANCE</div>
+      <div class="hero-team-small">（ライラック）</div>
       <p class="lead">
-        Lilac（ライラック）は、笑顔と元気を届けるキッズチアダンスチームです。<br>
-        仲間と一緒に楽しく踊りながら、イベント出演や大会参加を目指します！
+        Lilac（ライラック）は、仲間と共にチアダンスを楽しみ、<br>
+        地域イベントや大会参加を目指すキッズチアダンスチームです！
       </p>
       <button class="btn btn-primary" onclick="scrollToId('contact')">無料体験に申し込む</button>
       <button class="btn btn-ghost" onclick="scrollToId('classes')">クラスを見る</button>
@@ -223,6 +251,7 @@
       <p class="lead">毎週金曜日に2つのクラスを開講しています。</p>
 
       <div class="class-grid">
+
         <div class="class-card">
           <img src="lilac_kids.jpg" alt="キッズクラス">
           <h3>キッズクラス</h3>
@@ -238,3 +267,136 @@
           <p>対象：小学2年生〜中学生</p>
           <p>毎週金曜日 17:15〜18:30</p>
           <p><strong>料金：月額 6,000円（月4回）</strong></p>
+          <p>フォーメーションや表現力を高め、イベント出演も目指す本格クラスです。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="access">
+    <div class="inner">
+      <h2>アクセス</h2>
+      <p class="lead">レッスンは「地域交流センター小岩」で行っています。</p>
+
+      <div class="access-grid">
+        <div class="access-box">
+          <h3>地域交流センター小岩</h3>
+          <p>東京都江戸川区小岩</p>
+
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.000000000000!2d139.880000000000!3d35.730000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x0000000000000000!2z5Zyw5Z-f5Lqk5rWB44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v0000000000000"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="inner">
+      <h2>お問い合わせ・無料体験</h2>
+      <p class="lead">お気軽にお問い合わせください。</p>
+
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLScAuTXg1XXfXJrUNRoZBSF8W1zVzKAcMMhR5ly_NE1QD2GGDg/viewform?embedded=true"
+        width="100%" height="1400" frameborder="0" style="border:0;border-radius:12px;">
+      </iframe>
+    </div>
+  </section>
+
+<!-- ===== 系列キッズチアダンスチーム ===== -->
+<section id="groups" style="padding:70px 20px;">
+  <div class="inner" style="max-width:1100px; margin:auto;">
+
+    <h2 style="text-align:center; font-size:2rem; margin-bottom:10px;">
+      系列キッズチアダンスチーム
+    </h2>
+    <p class="lead" style="text-align:center; margin-bottom:40px;">
+      Lilacと同じ系列で活動しているキッズチアダンスチームです。
+    </p>
+
+    <div style="
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+      justify-content:center;
+    ">
+
+      <!-- Lilac -->
+      <div style="
+        background:#fff;
+        padding:24px;
+        border-radius:16px;
+        box-shadow:var(--shadow);
+        width:100%;
+        max-width:480px;
+        color:#000;
+      ">
+        <strong style="font-size:1.2rem;">＊小岩エリア　Lilac</strong><br>
+        <span style="color:#555; font-size:0.9rem;">
+          <!-- 春希：ここにリンクを入れてね -->
+          リンク未設定
+        </span>
+      </div>
+
+      <!-- Brights -->
+      <div style="
+        background:#fff;
+        padding:24px;
+        border-radius:16px;
+        box-shadow:var(--shadow);
+        width:100%;
+        max-width:480px;
+        color:#000;
+      ">
+        <strong style="font-size:1.2rem;">＊所沢エリア　Brights</strong><br>
+        <a href="https://springhope312-create.github.io/brights-cheer-dance/"
+           target="_blank"
+           style="color:var(--purple-dark); font-weight:600;">
+          Brights ホームページを見る
+        </a>
+      </div>
+
+      <!-- AILES -->
+      <div style="
+        background:#fff;
+        padding:24px;
+        border-radius:16px;
+        box-shadow:var(--shadow);
+        width:100%;
+        max-width:480px;
+        color:#000;
+      ">
+        <strong style="font-size:1.2rem;">＊幡ヶ谷エリア　AILES</strong><br>
+        <span style="color:#555; font-size:0.9rem;">
+          <!-- 春希：ここにリンクを入れてね -->
+          リンク未設定
+        </span>
+      </div>
+
+      <!-- Twinkles -->
+      <div style="
+        background:#fff;
+        padding:24px;
+        border-radius:16px;
+        box-shadow:var(--shadow);
+        width:100%;
+        max-width:480px;
+        color:#000;
+      ">
+        <strong style="font-size:1.2rem;">＊板橋エリア　Twinkles</strong><br>
+        <span style="color:#555; font-size:0.9rem;">
+          <!-- 春希：ここにリンクを入れてね -->
+          リンク未設定
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <footer>
+    © 2026 Lilac / Koiwa.
+  </footer>
+
+</body>
+</html>
