@@ -5,20 +5,24 @@
   <title>Lilac | 小岩キッズチアダンス</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-  :root {
-  --purple: #b57aff;        /* 明るめ紫 */
-  --purple-dark: #9b5de5;   /* 濃い紫 */
-  --pink: #ff7fd1;          /* 明るいピンク */
-  --pink-light: #ffc4e9;    /* 淡いピンク */
+    :root {
+      --purple: #c084fc;
+      --purple-dark: #9333ea;
+      --pink: #ff7fd1;
 
-  --text: #ffffff;
-  --muted: #cccccc;
-  --bg-soft: #121212;       /* やや明るい黒背景 */
+      --stepup-blue: #b3e0ff;
+      --advance-yellow: #fffde0;
 
-  --radius: 16px;
-  --shadow: 0 10px 25px rgba(255, 192, 255, 0.25);
-}
+      --stepup-border-yellow: #f7e27d;
+      --advance-border-blue: #8cc9ff;
 
+      --text: #ffffff;
+      --muted: #bbbbbb;
+      --bg-soft: #121212;
+
+      --radius: 16px;
+      --shadow: 0 10px 25px rgba(255, 192, 255, 0.25);
+    }
 
     body {
       margin: 0;
@@ -97,16 +101,17 @@
       color: var(--pink);
     }
 
+    /* ★★★ ここを白縁取りに変更 ★★★ */
     .hero-team {
       font-size: 2.4rem;
       font-weight: 900;
       color: var(--purple);
       margin-bottom: 10px;
       text-shadow:
-        -2px -2px 0 var(--pink),
-         2px -2px 0 var(--pink),
-        -2px  2px 0 var(--pink),
-         2px  2px 0 var(--pink);
+        -2px -2px 0 #ffffff,
+         2px -2px 0 #ffffff,
+        -2px  2px 0 #ffffff,
+         2px  2px 0 #ffffff;
     }
 
     .hero-team-small {
@@ -224,7 +229,7 @@
 
   <section id="top" class="hero">
     <div class="inner">
-      <img src="logo-lilac.png" alt="Lilac ロゴ" style="width:70%;max-width:420px;margin:0 auto 30px;">
+      <img src="Lilac_logo.jpg" alt="Lilac ロゴ" style="width:70%;max-width:420px;margin:0 auto 30px;">
       <h1 class="hero-title">小岩で楽しくチアダンス♪</h1>
       <div class="hero-team">Lilac</div>
       <div class="hero-team-small">（ライラック）</div>
@@ -245,7 +250,7 @@
       <div class="class-grid">
 
         <div class="class-card">
-          <img src="photo-stage-1.jpg" alt="キッズクラス">
+          <img src="lilac_kids.jpg" alt="キッズクラス">
           <h3>キッズクラス</h3>
           <p>対象：4才〜小学1年生</p>
           <p>毎週金曜日 16:00〜17:15</p>
@@ -254,7 +259,7 @@
         </div>
 
         <div class="class-card">
-          <img src="photo-stage-2.jpg" alt="アドバンスクラス">
+          <img src="lilac_advance.jpg" alt="アドバンスクラス">
           <h3>アドバンスクラス</h3>
           <p>対象：小学2年生〜中学生</p>
           <p>毎週金曜日 17:15〜18:30</p>
@@ -273,10 +278,12 @@
 
       <div class="access-grid">
         <div class="access-box">
-          <h3>西小岩コミュニティ会館</h3>
-          <p>〒133-0057 東京都江戸川区西小岩４丁目３−２２</p>
+          <h3>地域交流センター小岩</h3>
+          <p>東京都江戸川区小岩</p>
 
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.5513887287507!2d139.880135!3d35.73725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601885dc0b1b3b41%3A0xbfdf9991420b6e85!2z5rGf5oi45bed5Yy6IOilv-Wwj-WyqeOCs-ODn-ODpeODi-ODhuOCo-S8mumkqA!5e0!3m2!1sja!2sjp!4v1783834370738!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.000000000000!2d139.880000000000!3d35.730000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x0000000000000000!2z5Zyw5Z-f5Lqk5rWB44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v0000000000000"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
       </div>
     </div>
   </section>
