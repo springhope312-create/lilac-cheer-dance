@@ -6,194 +6,197 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
   :root {
-  --purple: #b57aff;        /* 明るめ紫 */
-  --purple-dark: #9b5de5;   /* 濃い紫 */
-  --pink: #ff7fd1;          /* 明るいピンク */
-  --pink-light: #ffc4e9;    /* 淡いピンク */
+    --purple: #b57aff;
+    --purple-dark: #9b5de5;
+    --pink: #ff7fd1;
+    --pink-light: #ffc4e9;
+    --text: #ffffff;
+    --muted: #cccccc;
+    --bg-soft: #121212;
+    --radius: 16px;
+    --shadow: 0 10px 25px rgba(255, 192, 255, 0.25);
+  }
 
-  --text: #ffffff;
-  --muted: #cccccc;
-  --bg-soft: #121212;       /* やや明るい黒背景 */
+  body {
+    margin: 0;
+    font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+  }
 
-  --radius: 16px;
-  --shadow: 0 10px 25px rgba(255, 192, 255, 0.25);
-}
+  header {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding: 10px 20px;
+    z-index: 50;
+  }
 
+  .header-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--pink);
+  }
 
-    body {
-      margin: 0;
-      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
-      background: var(--bg-soft);
-      color: var(--text);
-    }
+  nav button {
+    background: none;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    color: var(--pink);
+  }
 
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(0,0,0,0.7);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.15);
-      padding: 10px 20px;
-      z-index: 50;
-    }
+  nav button:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--purple);
+  }
 
-    .header-inner {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--pink);
-    }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: #fff;
+  }
 
-    nav button {
-      background: none;
-      border: none;
-      padding: 8px 14px;
-      border-radius: 999px;
-      cursor: pointer;
-      color: var(--pink);
-    }
+  section {
+    padding: 70px 20px;
+  }
 
-    nav button:hover {
-      background: rgba(255,255,255,0.1);
-      color: var(--purple);
-    }
+  .inner {
+    max-width: 1100px;
+    margin: auto;
+  }
 
-    .nav-cta {
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      color: #fff;
-    }
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--pink);
+  }
 
-    section {
-      padding: 70px 20px;
-    }
+  .lead {
+    color: var(--muted);
+    margin-bottom: 30px;
+  }
 
-    .inner {
-      max-width: 1100px;
-      margin: auto;
-    }
+  /* ===== HERO ===== */
+  .hero {
+    text-align: center;
+    padding-top: 80px;
+  }
 
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-      color: var(--pink);
-    }
+  .hero-title {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    color: var(--pink);
+  }
 
-    .lead {
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
+  .hero-team {
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--purple);
+    margin-bottom: 10px;
+    text-shadow:
+      -2px -2px 0 #ffffff,
+       2px -2px 0 #ffffff,
+      -2px  2px 0 #ffffff,
+       2px  2px 0 #ffffff;
+  }
 
-    /* ===== HERO ===== */
-    .hero {
-      text-align: center;
-      padding-top: 80px;
-    }
+  .hero-team-small {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--pink);
+    margin-bottom: 25px;
+  }
 
-    .hero-title {
-      font-size: 2.4rem;
-      margin-bottom: 16px;
-      color: var(--pink);
-    }
+  .btn {
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 10px;
+  }
 
-   .hero-team {
-  font-size: 2.4rem;
-  font-weight: 900;
-  color: var(--purple);
-  margin-bottom: 10px;
-  text-shadow:
-    -2px -2px 0 #ffffff,
-     2px -2px 0 #ffffff,
-    -2px  2px 0 #ffffff,
-     2px  2px 0 #ffffff;
-}
+  .btn-primary {
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    color: #fff;
+    box-shadow: var(--shadow);
+  }
 
-    .hero-team-small {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--pink);
-      margin-bottom: 25px;
-    }
+  .btn-ghost {
+    background: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--purple-dark);
+  }
 
-    .btn {
-      padding: 10px 20px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      margin-right: 10px;
-    }
+  /* ===== クラス紹介 ===== */
+  .class-grid {
+    display: flex;
+    gap: 24px;
+    align-items: stretch;
+  }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--purple), var(--pink));
-      color: #fff;
-      box-shadow: var(--shadow);
-    }
+  .class-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    box-sizing: border-box;
+    padding: 20px;
+    background: #fff;
+    color: #000;
+  }
 
-    .btn-ghost {
-      background: #fff;
-      border: 1px solid rgba(255,255,255,0.2);
-      color: var(--purple-dark);
-    }
+  .class-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+  }
 
-    /* ===== クラス紹介 ===== */
+  /* ===== アクセス ===== */
+  .access-grid {
+    display: flex;
+    justify-content: center;
+  }
+
+  .access-box {
+    border: 1px dashed var(--muted);
+    padding: 20px;
+    border-radius: var(--radius);
+    background: #fff;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    color: #000;
+  }
+
+  .map-wrap {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--muted);
+    border-top: 1px solid rgba(255,255,255,0.15);
+  }
+
+  @media (max-width: 600px) {
     .class-grid {
-      display: flex;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .class-card {
-      flex: 1;
-      display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      box-sizing: border-box;
-      padding: 20px;
-      background: #fff;
-      color: #000;
     }
-
-    .class-card img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      border-radius: var(--radius);
-      margin-bottom: 10px;
-    }
-
-    /* ===== アクセス ===== */
-    .access-grid {
-      display: flex;
-      justify-content: center;
-    }
-
-    .access-box {
-      border: 1px dashed var(--muted);
-      padding: 20px;
-      border-radius: var(--radius);
-      background: #fff;
-      width: 100%;
-      max-width: 900px;
-      margin: auto;
-      color: #000;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      color: var(--muted);
-      border-top: 1px solid rgba(255,255,255,0.15);
-    }
-
-    @media (max-width: 600px) {
-      .class-grid {
-        flex-direction: column;
-      }
-    }
+  }
   </style>
 
   <script>
@@ -259,134 +262,4 @@
           <p>対象：小学2年生〜中学生</p>
           <p>毎週金曜日 17:15〜18:30</p>
           <p><strong>料金：月額 6,000円（月4回）</strong></p>
-          <p>フォーメーションや表現力を高め、イベント出演も目指す本格クラスです。</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="access">
-    <div class="inner">
-      <h2>アクセス</h2>
-      <p class="lead">レッスンは「地域交流センター小岩」で行っています。</p>
-
-      <div class="access-grid">
-        <div class="access-box">
-          <h3>西小岩コミュニティ会館</h3>
-          <p>〒133-0057 東京都江戸川区西小岩４丁目３−２２</p>
-
-         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.5513887287507!2d139.880135!3d35.73725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601885dc0b1b3b41%3A0xbfdf9991420b6e85!2z5rGf5oi45bed5Yy6IOilv-Wwj-WyqeOCs-ODn-ODpeODi-ODhuOCo-S8mumkqA!5e0!3m2!1sja!2sjp!4v1783834370738!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="inner">
-      <h2>お問い合わせ・無料体験</h2>
-      <p class="lead">お気軽にお問い合わせください。</p>
-
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLScAuTXg1XXfXJrUNRoZBSF8W1zVzKAcMMhR5ly_NE1QD2GGDg/viewform?embedded=true"
-        width="100%" height="1400" frameborder="0" style="border:0;border-radius:12px;">
-      </iframe>
-    </div>
-  </section>
-
-<!-- ===== 系列キッズチアダンスチーム ===== -->
-<section id="groups" style="padding:70px 20px;">
-  <div class="inner" style="max-width:1100px; margin:auto;">
-
-    <h2 style="text-align:center; font-size:2rem; margin-bottom:10px;">
-      系列キッズチアダンスチーム
-    </h2>
-    <p class="lead" style="text-align:center; margin-bottom:40px;">
-      Lilacと同じ系列で活動しているキッズチアダンスチームです。
-    </p>
-
-    <div style="
-      display:flex;
-      gap:24px;
-      flex-wrap:wrap;
-      justify-content:center;
-    ">
-
-      <!-- Lilac -->
-      <div style="
-        background:#fff;
-        padding:24px;
-        border-radius:16px;
-        box-shadow:var(--shadow);
-        width:100%;
-        max-width:480px;
-        color:#000;
-      ">
-        <strong style="font-size:1.2rem;">＊小岩エリア　Lilac</strong><br>
-        <span style="color:#555; font-size:0.9rem;">
-          <!-- 春希：ここにリンクを入れてね -->
-          リンク未設定
-        </span>
-      </div>
-
-      <!-- Brights -->
-      <div style="
-        background:#fff;
-        padding:24px;
-        border-radius:16px;
-        box-shadow:var(--shadow);
-        width:100%;
-        max-width:480px;
-        color:#000;
-      ">
-        <strong style="font-size:1.2rem;">＊所沢エリア　Brights</strong><br>
-        <a href="https://springhope312-create.github.io/brights-cheer-dance/"
-           target="_blank"
-           style="color:var(--purple-dark); font-weight:600;">
-          Brights ホームページを見る
-        </a>
-      </div>
-
-      <!-- AILES -->
-      <div style="
-        background:#fff;
-        padding:24px;
-        border-radius:16px;
-        box-shadow:var(--shadow);
-        width:100%;
-        max-width:480px;
-        color:#000;
-      ">
-        <strong style="font-size:1.2rem;">＊幡ヶ谷エリア　AILES</strong><br>
-        <span style="color:#555; font-size:0.9rem;">
-          <!-- 春希：ここにリンクを入れてね -->
-          リンク未設定
-        </span>
-      </div>
-
-      <!-- Twinkles -->
-      <div style="
-        background:#fff;
-        padding:24px;
-        border-radius:16px;
-        box-shadow:var(--shadow);
-        width:100%;
-        max-width:480px;
-        color:#000;
-      ">
-        <strong style="font-size:1.2rem;">＊板橋エリア　Twinkles</strong><br>
-        <span style="color:#555; font-size:0.9rem;">
-          <!-- 春希：ここにリンクを入れてね -->
-          リンク未設定
-        </span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <footer>
-    © 2026 Lilac / Koiwa.
-  </footer>
-
-</body>
-</html>
+          <p>フォーメーションや表現力を高め、イベント出演
